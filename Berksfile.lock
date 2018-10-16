@@ -1,0 +1,7 @@
+DEPENDENCIES
+  logstash_cookbook
+    git: git@github.com:IvorL/logstash_cookbook.git
+    revision: 6b57181e361f9489e6717f845cededb001c4de54
+
+GRAPH
+  logstash_cookbook (0.1.0)
