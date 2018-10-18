@@ -24,7 +24,7 @@ output {
 	elasticsearch {
 		hosts => "http://10.1.6.5:9200"
 		manage_template => false
-		index => "%{[@metadata][beat]}-nodeapp-%{[@metadata][version]}-%{+YYYY.MM.dd}"
+		index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
 		document_type => "%{[@metadata][type]}"
 	}
 }
