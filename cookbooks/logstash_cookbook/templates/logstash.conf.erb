@@ -1,0 +1,30 @@
+input {
+	beats {
+		port => 5044
+	}
+
+	beats {
+		port => 5045
+	}
+
+  beats {
+		port => 5046
+	}
+
+  beats {
+		port => 5047
+	}
+
+	file {
+		path => "/var/log/logstash/logstash-plain.log"
+	}
+}
+
+output {
+	elasticsearch {
+		hosts => "http://10.24.1.246:9200"
+		manage_template => false
+		index => "%{[@metadata][beat]}-nodeapp-%{[@metadata][version]}-%{+YYYY.MM.dd}"
+		document_type => "%{[@metadata][type]}"
+	}
+}
